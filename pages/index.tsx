@@ -1,9 +1,8 @@
 import { NextPage } from "next";
-import Nav from "../components/nav";
+import Layout from "../components/Layout";
 
-const Home: NextPage<{ userAgent: string }> = ({ userAgent }) => (
-  <>
-    <Nav />
+const Home: NextPage = () => (
+  <Layout>
     <div role="main" className="w-full text-center">
       <div className="max-w-4xl flex items-center h-auto lg:h-screen flex-wrap mx-auto my-16 lg:my-0">
         {/* Main Col */}
@@ -15,7 +14,7 @@ const Home: NextPage<{ userAgent: string }> = ({ userAgent }) => (
             {/* Image for mobile view */}
             <div
               className="block lg:hidden rounded-full shadow-xl mx-auto -mt-16 h-48 w-48 bg-cover bg-center"
-              style={{ backgroundImage: 'url("/horse.jpg")' }}
+              style={{ backgroundImage: 'url("/horse.webp")' }}
             />
 
             <h1 className="text-3xl font-bold pt-8 lg:pt-0">Thomas Eberl</h1>
@@ -110,21 +109,14 @@ const Home: NextPage<{ userAgent: string }> = ({ userAgent }) => (
         <div className="w-full lg:w-2/5">
           {/* Big profile image for side bar (desktop */}
           <img
-            src="/horse.jpg"
+            alt="profile picture"
+            src="/horse.webp"
             className="rounded-none lg:rounded-lg shadow-2xl hidden lg:block"
           />
         </div>
       </div>
     </div>
-    <footer className="mb-2 text-center text-xs text-gray-600 hover:text-gray-800">
-      <strong>v1</strong> Munich 2020
-    </footer>
-  </>
+  </Layout>
 );
-
-Home.getInitialProps = async ({ req }) => {
-  const userAgent = req ? req.headers["user-agent"] || "" : navigator.userAgent;
-  return { userAgent };
-};
 
 export default Home;
