@@ -1,7 +1,11 @@
 {
   "name": "homepage_next",
   "version": "1.0.0",
-  "description": "",
+  "description": "my personal little space in the world wide web",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/teberl/homepage_next"
+  },
   "main": "index.js",
   "scripts": {
     "dev": "next",
@@ -18,15 +22,14 @@
   },
   "devDependencies": {
     "@fullhuman/postcss-purgecss": "^2.0.6",
-    "@types/node": "^13.7.1",
-    "@types/react": "^16.9.19",
+    "@types/node": "^13.7.4",
+    "@types/react": "^16.9.22",
     "@types/react-dom": "^16.9.5",
     "husky": "^4.2.3",
     "lint-staged": "^10.0.7",
-    "postcss-preset-env": "^6.7.0",
     "prettier": "^1.19.1",
     "tailwindcss": "^1.2.0",
-    "typescript": "^3.7.5"
+    "typescript": "^3.8.2"
   },
   "husky": {
     "hooks": {
