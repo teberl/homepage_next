@@ -4,7 +4,7 @@ import { NextPage } from "next";
 
 const links = [
   { href: "/", label: "Home" },
-  { href: "about", label: "About" },
+  { href: "about", label: "About" }
 ];
 
 const Nav: NextPage = () => {

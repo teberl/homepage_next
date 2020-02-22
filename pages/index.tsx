@@ -1,5 +1,5 @@
 import { NextPage } from "next";
-import Nav from "../components/nav";
+import Nav from "../components/Nav";
 
 const Home: NextPage<{ userAgent: string }> = ({ userAgent }) => (
   <>
