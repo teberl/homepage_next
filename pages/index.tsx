@@ -14,7 +14,7 @@ const Home: NextPage = () => (
             {/* Image for mobile view */}
             <div
               className="block lg:hidden rounded-full shadow-xl mx-auto -mt-16 h-48 w-48 bg-cover bg-center"
-              style={{ backgroundImage: 'url("/horse.jpg")' }}
+              style={{ backgroundImage: 'url("/horse.webp")' }}
             />
 
             <h1 className="text-3xl font-bold pt-8 lg:pt-0">Thomas Eberl</h1>
@@ -110,7 +110,7 @@ const Home: NextPage = () => (
           {/* Big profile image for side bar (desktop */}
           <img
             alt="profile picture"
-            src="/horse.jpg"
+            src="/horse.webp"
             className="rounded-none lg:rounded-lg shadow-2xl hidden lg:block"
           />
         </div>
