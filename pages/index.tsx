@@ -1,9 +1,8 @@
 import { NextPage } from "next";
-import Nav from "../components/Nav";
+import Layout from "../components/Layout";
 
-const Home: NextPage<{ userAgent: string }> = ({ userAgent }) => (
-  <>
-    <Nav />
+const Home: NextPage = () => (
+  <Layout>
     <div role="main" className="w-full text-center">
       <div className="max-w-4xl flex items-center h-auto lg:h-screen flex-wrap mx-auto my-16 lg:my-0">
         {/* Main Col */}
@@ -116,15 +115,7 @@ const Home: NextPage<{ userAgent: string }> = ({ userAgent }) => (
         </div>
       </div>
     </div>
-    <footer className="mb-2 text-center text-xs text-gray-600 hover:text-gray-800">
-      <strong>v1</strong> Munich 2020
-    </footer>
-  </>
+  </Layout>
 );
-
-Home.getInitialProps = async ({ req }) => {
-  const userAgent = req ? req.headers["user-agent"] || "" : navigator.userAgent;
-  return { userAgent };
-};
 
 export default Home;
