@@ -12,16 +12,21 @@ const Home: NextPage = () => (
         >
           <div className="p-4 md:p-12 text-center lg:text-left">
             {/* Image for mobile view */}
-            <div
-              className="block lg:hidden rounded-full shadow-xl mx-auto -mt-16 h-48 w-48 bg-cover bg-center"
-              style={{ backgroundImage: 'url("/horse.webp")' }}
-            />
+            <picture className="block lg:hidden rounded-full shadow-xl mx-auto -mt-16 h-48 w-48 bg-cover bg-center">
+              <source type="image/webp" srcSet="/horse.webp" />
+              <source type="image/jpeg" srcSet="/horse.jpg" />
+              <img
+                className="block lg:hidden rounded-full shadow-xl mx-auto -mt-16 h-48 w-48 bg-cover bg-center"
+                src="/horse.jpg"
+                alt="profile picture"
+              />
+            </picture>
 
             <h1 className="text-3xl font-bold pt-8 lg:pt-0">Thomas Eberl</h1>
             <div className="mx-auto lg:mx-0 w-4/5 pt-3 border-b-2 border-blue-500 opacity-25"></div>
             <p className="pt-4 text-base font-bold flex items-center justify-center lg:justify-start">
               <svg
-                className="h-4 fill-current text-blue-500 pr-4"
+                className="h-4 fill-current text-blue-700 pr-4"
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 20 20"
               >
@@ -29,9 +34,9 @@ const Home: NextPage = () => (
               </svg>
               Software Engineer at Check24
             </p>
-            <p className="pt-2 text-gray-600 text-xs lg:text-sm flex items-center justify-center lg:justify-start">
+            <p className="pt-2 text-gray-800 text-xs lg:text-sm flex items-center justify-center lg:justify-start">
               <svg
-                className="h-4 fill-current text-blue-500 pr-4"
+                className="h-4 fill-current text-blue-700 pr-4"
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 20 20"
               >
@@ -44,7 +49,7 @@ const Home: NextPage = () => (
             </p>
             <div className="pt-12 pb-8">
               <button
-                className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+                className="bg-blue-700 hover:bg-blue-800 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
                 type="button"
               >
                 Get In Touch
@@ -52,6 +57,7 @@ const Home: NextPage = () => (
             </div>
 
             <div className="mt-6 pb-16 lg:pb-0 w-4/5 lg:w-full mx-auto flex flex-wrap items-center justify-between">
+              {/* Use https://simpleicons.org/ to find the svg for your preferred product */}
               <a className="link" href="https://twitter.com/_teberl">
                 <svg
                   className="h-6 fill-current text-gray-600 hover:text-blue-700"
@@ -65,7 +71,7 @@ const Home: NextPage = () => (
               </a>
               <a className="link" href="https://github.com/teberl">
                 <svg
-                  className="h-6 fill-current text-gray-600 hover:text-blue-500"
+                  className="h-6 fill-current text-gray-600 hover:text-black"
                   role="img"
                   viewBox="0 0 24 24"
                   xmlns="http://www.w3.org/2000/svg"
@@ -76,7 +82,7 @@ const Home: NextPage = () => (
               </a>
               <a className="link" href="https://www.instagram.com/_teberl/">
                 <svg
-                  className="h-6 fill-current text-gray-600 hover:text-blue-500"
+                  className="h-6 fill-current text-gray-600 hover:text-purple-700"
                   role="img"
                   viewBox="0 0 24 24"
                   xmlns="http://www.w3.org/2000/svg"
@@ -90,7 +96,7 @@ const Home: NextPage = () => (
                 href="https://stackoverflow.com/users/6817880/teberl"
               >
                 <svg
-                  className="h-6 fill-current text-gray-600 hover:text-blue-500"
+                  className="h-6 fill-current text-gray-600 hover:text-orange-700"
                   role="img"
                   viewBox="0 0 24 24"
                   xmlns="http://www.w3.org/2000/svg"
@@ -100,19 +106,21 @@ const Home: NextPage = () => (
                 </svg>
               </a>
             </div>
-
-            {/* Use https://simpleicons.org/ to find the svg for your preferred product */}
           </div>
         </div>
 
         {/* Img Col */}
         <div className="w-full lg:w-2/5">
           {/* Big profile image for side bar (desktop */}
-          <img
-            alt="profile picture"
-            src="/horse.webp"
-            className="rounded-none lg:rounded-lg shadow-2xl hidden lg:block"
-          />
+          <picture className="rounded-none lg:rounded-lg shadow-2xl hidden lg:block">
+            <source type="image/webp" srcSet="/horse.webp" />
+            <source type="image/jpeg" srcSet="/horse.jpg" />
+            <img
+              className="rounded-none lg:rounded-lg shadow-2xl hidden lg:block"
+              src="/horse.jpg"
+              alt="profile picture"
+            />
+          </picture>
         </div>
       </div>
     </div>

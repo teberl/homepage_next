@@ -21,7 +21,7 @@ const Nav: React.FunctionComponent = () => {
         <button
           onClick={() => setIsHidden(!isHidden)}
           id="nav-button"
-          className="flex items-center px-3 py-2 border rounded text-gray-600 border-gray-600 hover:text-gray-800 hover:border-gray-800"
+          className="flex items-center px-3 py-2 border rounded text-gray-800 border-gray-600"
         >
           <svg
             className="fill-current h-3 w-3"
@@ -42,7 +42,7 @@ const Nav: React.FunctionComponent = () => {
         <div className="text-sm lg:flex-grow">
           {links.map(({ href, label }) => (
             <Link key={`${href}${label}`} href={href}>
-              <a className="block mt-4 lg:inline-block lg:mt-0 text-gray-600 hover:text-gray-800 mr-4">
+              <a className="block mt-4 lg:inline-block lg:mt-0 text-gray-800 hover:text-blue-700 mr-4">
                 {label}
               </a>
             </Link>
