@@ -28,7 +28,7 @@ const Layout: React.FunctionComponent<Props> = ({
       <Nav />
     </header>
     {children}
-    <footer className="mb-2 text-center text-xs text-gray-800">
+    <footer className="mb-2 text-center text-xs text-gray-800 cursor-default">
       <strong>v1</strong> Munich 2020
     </footer>
   </div>

@@ -26,7 +26,7 @@ const Home: NextPage = () => (
             <div className="mx-auto lg:mx-0 w-4/5 pt-3 border-b-2 border-blue-500 opacity-25"></div>
             <p className="pt-4 text-base font-bold flex items-center justify-center lg:justify-start">
               <svg
-                className="h-4 fill-current text-blue-500 pr-4"
+                className="h-4 fill-current text-blue-700 pr-4"
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 20 20"
               >
@@ -36,7 +36,7 @@ const Home: NextPage = () => (
             </p>
             <p className="pt-2 text-gray-800 text-xs lg:text-sm flex items-center justify-center lg:justify-start">
               <svg
-                className="h-4 fill-current text-blue-500 pr-4"
+                className="h-4 fill-current text-blue-700 pr-4"
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 20 20"
               >
@@ -71,7 +71,7 @@ const Home: NextPage = () => (
               </a>
               <a className="link" href="https://github.com/teberl">
                 <svg
-                  className="h-6 fill-current text-gray-600 hover:text-blue-500"
+                  className="h-6 fill-current text-gray-600 hover:text-black"
                   role="img"
                   viewBox="0 0 24 24"
                   xmlns="http://www.w3.org/2000/svg"
@@ -82,7 +82,7 @@ const Home: NextPage = () => (
               </a>
               <a className="link" href="https://www.instagram.com/_teberl/">
                 <svg
-                  className="h-6 fill-current text-gray-600 hover:text-blue-500"
+                  className="h-6 fill-current text-gray-600 hover:text-purple-700"
                   role="img"
                   viewBox="0 0 24 24"
                   xmlns="http://www.w3.org/2000/svg"
@@ -96,7 +96,7 @@ const Home: NextPage = () => (
                 href="https://stackoverflow.com/users/6817880/teberl"
               >
                 <svg
-                  className="h-6 fill-current text-gray-600 hover:text-blue-500"
+                  className="h-6 fill-current text-gray-600 hover:text-orange-700"
                   role="img"
                   viewBox="0 0 24 24"
                   xmlns="http://www.w3.org/2000/svg"
