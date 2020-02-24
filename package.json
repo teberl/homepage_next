@@ -12,12 +12,14 @@
     "build": "next build",
     "start": "next start"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "homepage"
+  ],
+  "author": "teberl",
   "license": "ISC",
   "dependencies": {
     "classnames": "^2.2.6",
-    "next": "^9.2.1",
+    "next": "^9.2.2",
     "react": "^16.12.0",
     "react-dom": "^16.12.0"
   },
