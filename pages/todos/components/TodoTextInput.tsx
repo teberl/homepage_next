@@ -16,7 +16,7 @@ const TodoTextInput: React.FunctionComponent<IProps> = ({ todo, done }) => {
 
   const { addTodo, updateTodo } = useContext(TodoContext);
 
-  const placeholder = !todo ? "What needs to be done!" : undefined;
+  const placeholder = !todo ? "What needs to be done?" : undefined;
 
   const handleSubmit = (event: React.KeyboardEvent<HTMLInputElement>) => {
     const text = event.currentTarget.value;
@@ -46,9 +46,7 @@ const TodoTextInput: React.FunctionComponent<IProps> = ({ todo, done }) => {
 
   return (
     <input
-      className={classnames({
-        "new-todo": !todo
-      })}
+      className="flex-1 text-m mx-2 text-center text-gray-700 font-bold"
       type="text"
       placeholder={placeholder}
       autoFocus={true}

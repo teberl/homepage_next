@@ -8,6 +8,7 @@ interface ITodosContext {
   deleteTodo(id: number): Array<ITodo>;
   toggleTodo(id: number): Array<ITodo>;
   updateTodo(id: number, text: string): Array<ITodo>;
+  completeAll(): Array<ITodo>;
 }
 
 const Context = React.createContext({
@@ -15,7 +16,8 @@ const Context = React.createContext({
   addTodo: () => [],
   deleteTodo: () => [],
   toggleTodo: () => [],
-  updateTodo: () => []
+  updateTodo: () => [],
+  completeAll: () => []
 } as ITodosContext);
 
 const Provider: React.FunctionComponent = ({ children }) => {
@@ -29,7 +31,8 @@ const Provider: React.FunctionComponent = ({ children }) => {
     deleteTodo: id => dispatch({ type: Actions.DELETE, payload: { id } }),
     updateTodo: (id, text) =>
       dispatch({ type: Actions.UPDATE, payload: { id, text } }),
-    toggleTodo: id => dispatch({ type: Actions.TOGGLE, payload: { id } })
+    toggleTodo: id => dispatch({ type: Actions.TOGGLE, payload: { id } }),
+    completeAll: () => dispatch({ type: Actions.COMPLETE_ALL, payload: {} })
   };
 
   return <Context.Provider value={initialContext}>{children}</Context.Provider>;
@@ -61,6 +64,9 @@ function reducer(todos: Array<ITodo>, action: IAction): Array<ITodo> {
       );
     case Actions.UPDATE:
       return todos.map(todo => (todo.id === id ? { ...todo, text } : todo));
+    case Actions.COMPLETE_ALL:
+      const areAllCompleted = todos.every(todo => todo.isCompleted);
+      return todos.map(todo => ({ ...todo, isCompleted: !areAllCompleted }));
     default:
       return todos;
   }

@@ -19,29 +19,29 @@ const TodoItem: React.FunctionComponent<IProps> = ({ todo }) => {
   } else {
     element = (
       <>
-        <label className="block text-gray-500 font-bold" />
         <input
-          className="mr-2 leading-tight"
+          className="flex-none"
           type="checkbox"
           checked={todo.isCompleted}
           onChange={() => toggleTodo(todo.id)}
         />
-        <span className="text-m" onDoubleClick={() => setEditing(!isEditing)}>
+        <span
+          className={classnames("flex-1 text-m mx-2 text-gray-700 font-bold", {
+            "line-through text-gray-500": todo.isCompleted
+          })}
+          onDoubleClick={() => setEditing(true)}
+        >
           {todo.text}
         </span>
 
-        <button className="ml-2" onClick={() => deleteTodo(todo.id)}>
+        <button className="flex-none" onClick={() => deleteTodo(todo.id)}>
           ❌
         </button>
       </>
     );
   }
 
-  return (
-    <li className={classnames({ "line-through": todo.isCompleted })}>
-      {element}
-    </li>
-  );
+  return <li className="flex justify-between w-full px-10">{element}</li>;
 };
 
 export default TodoItem;
