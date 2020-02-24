@@ -2,7 +2,7 @@ import classnames from "classnames";
 import React, { useState, useContext } from "react";
 
 import { ITodo } from "../interfaces";
-import { Context } from "../todos-context";
+import { TodosCtx } from "../context";
 import TodoTextInput from "./TodoTextInput";
 
 interface IProps {
@@ -11,7 +11,7 @@ interface IProps {
 
 const TodoItem: React.FunctionComponent<IProps> = ({ todo }) => {
   const [isEditing, setEditing] = useState(false);
-  const { toggleTodo, deleteTodo } = useContext(Context);
+  const { toggleTodo, deleteTodo } = useContext(TodosCtx);
 
   let element;
   if (isEditing) {

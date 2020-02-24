@@ -1,7 +1,7 @@
 import { NextPage } from "next";
-import { Provider as TodosCtxProvider } from "./todos-context";
 import Layout from "../../components/Layout";
-import MainSection from "./components/MainSection";
+import { TodosCtxProvider } from "../../todos/context";
+import MainSection from "../../todos/components/MainSection";
 
 const About: NextPage = () => (
   <Layout>

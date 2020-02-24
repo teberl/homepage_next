@@ -1,8 +1,7 @@
-import classnames from "classnames";
 import React, { useState, useContext } from "react";
 
 import { ITodo } from "../interfaces";
-import { Context as TodoContext } from "../todos-context";
+import { TodosCtx } from "../context";
 
 const ENTER_KEY_CODE = 13;
 
@@ -14,7 +13,7 @@ interface IProps {
 const TodoTextInput: React.FunctionComponent<IProps> = ({ todo, done }) => {
   const [localText, setLocalText] = useState((todo && todo.text) || "");
 
-  const { addTodo, updateTodo } = useContext(TodoContext);
+  const { addTodo, updateTodo } = useContext(TodosCtx);
 
   const placeholder = !todo ? "What needs to be done?" : undefined;
 

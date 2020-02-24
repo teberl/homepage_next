@@ -1,13 +1,13 @@
 import React, { useContext } from "react";
 
 import { TodoFilters } from "../enums";
-import { Context } from "../todos-context";
+import { TodosCtx } from "../context";
 import TodoList from "./TodoList";
 import TodoTextInput from "./TodoTextInput";
 
 const MainSection: React.FunctionComponent = () => {
   const filter = TodoFilters.SHOW_ALL;
-  const { todos, completeAll } = useContext(Context);
+  const { todos, completeAll } = useContext(TodosCtx);
   const todosCount = todos.length;
   const completedCount = todos.filter(todo => todo.isCompleted).length;
 

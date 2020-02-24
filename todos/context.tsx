@@ -11,7 +11,7 @@ interface ITodosContext {
   completeAll(): Array<ITodo>;
 }
 
-const Context = React.createContext({
+const TodosCtx = React.createContext({
   todos: [],
   addTodo: () => [],
   deleteTodo: () => [],
@@ -20,7 +20,7 @@ const Context = React.createContext({
   completeAll: () => []
 } as ITodosContext);
 
-const Provider: React.FunctionComponent = ({ children }) => {
+const TodosCtxProvider: React.FunctionComponent = ({ children }) => {
   const [todos, dispatch]: [Array<ITodo>, Function] = useReducer(reducer, [
     { id: 0, text: "First things first.", isCompleted: false }
   ]);
@@ -35,7 +35,9 @@ const Provider: React.FunctionComponent = ({ children }) => {
     completeAll: () => dispatch({ type: Actions.COMPLETE_ALL, payload: {} })
   };
 
-  return <Context.Provider value={initialContext}>{children}</Context.Provider>;
+  return (
+    <TodosCtx.Provider value={initialContext}>{children}</TodosCtx.Provider>
+  );
 };
 
 interface IAction {
@@ -72,4 +74,4 @@ function reducer(todos: Array<ITodo>, action: IAction): Array<ITodo> {
   }
 }
 
-export { Context, Provider };
+export { TodosCtx, TodosCtxProvider };

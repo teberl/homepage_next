@@ -1,7 +1,7 @@
 import React from "react";
 import { useContext } from "react";
 import { TodoFilters } from "../enums";
-import { Context } from "../todos-context";
+import { TodosCtx } from "../context";
 import TodoItem from "./TodoItem";
 
 interface IProps {
@@ -9,7 +9,7 @@ interface IProps {
 }
 
 const TodoList: React.FunctionComponent<IProps> = ({ filter }) => {
-  const { todos } = useContext(Context);
+  const { todos } = useContext(TodosCtx);
 
   return (
     <ul id="todoList" className="my-5">
