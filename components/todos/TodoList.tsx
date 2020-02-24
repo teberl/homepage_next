@@ -1,7 +1,7 @@
 import React from "react";
 import { useContext } from "react";
-import { TodoFilters } from "../enums";
-import { TodosCtx } from "../context";
+import { TodoFilters } from "./enums";
+import { TodosCtx } from "./context";
 import TodoItem from "./TodoItem";
 
 interface IProps {

@@ -1,7 +1,7 @@
 import React, { useState, useContext } from "react";
 
-import { ITodo } from "../interfaces";
-import { TodosCtx } from "../context";
+import { ITodo } from "./interfaces";
+import { TodosCtx } from "./context";
 
 const ENTER_KEY_CODE = 13;
 

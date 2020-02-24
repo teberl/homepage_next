@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 
-import { TodoFilters } from "../enums";
-import { TodosCtx } from "../context";
+import { TodoFilters } from "./enums";
+import { TodosCtx } from "./context";
 import TodoList from "./TodoList";
 import TodoTextInput from "./TodoTextInput";
 
