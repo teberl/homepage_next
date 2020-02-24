@@ -7,5 +7,6 @@ export enum TodoFilters {
 export enum Actions {
   ADD,
   TOGGLE,
-  DELETE
+  DELETE,
+  UPDATE
 }

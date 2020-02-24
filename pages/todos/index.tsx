@@ -6,7 +6,6 @@ import MainSection from "./components/MainSection";
 const About: NextPage = () => (
   <Layout>
     <TodosCtxProvider>
-      <h1 className="my-32">Todos - MVC</h1>
       <MainSection />
     </TodosCtxProvider>
   </Layout>

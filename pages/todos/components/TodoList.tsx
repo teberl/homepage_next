@@ -12,7 +12,7 @@ const TodoList: React.FunctionComponent<IProps> = ({ filter }) => {
   const { todos } = useContext(Context);
 
   return (
-    <ul className="todo-list">
+    <ul id="todoList" className="my-5">
       {todos.map(todo => (
         <TodoItem key={todo.id} todo={todo} />
       ))}
