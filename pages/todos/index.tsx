@@ -1,12 +1,12 @@
 import { NextPage } from "next";
 import Layout from "../../components/Layout";
-import MainSection from "../../components/todos/MainSection";
+import TodosSection from "../../components/todos/TodosSection";
 import { TodosCtxProvider } from "../../components/todos/context";
 
 const About: NextPage = () => (
   <Layout>
     <TodosCtxProvider>
-      <MainSection />
+      <TodosSection />
     </TodosCtxProvider>
   </Layout>
 );

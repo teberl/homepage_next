@@ -2,11 +2,11 @@ import * as React from "react";
 import { useContext } from "react";
 import { TodoFilters } from "./enums";
 import { TodosCtx } from "./context";
+import Footer from "./Footer";
 import TodoList from "./TodoList";
 import TodoTextInput from "./TodoTextInput";
 
-const MainSection: React.FunctionComponent = () => {
-  const filter = TodoFilters.SHOW_ALL;
+const TodosSection: React.FunctionComponent = () => {
   const { todos, completeAll } = useContext(TodosCtx);
   const todosCount = todos.length;
   const completedCount = todos.filter(todo => todo.isCompleted).length;
@@ -27,19 +27,12 @@ const MainSection: React.FunctionComponent = () => {
             <TodoTextInput done={() => {}} />
             <div className="flex-none invisible">❌</div>
           </div>
-          <TodoList filter={filter} />
-          {/* {!!todosCount && (
-            <Footer
-              completedCount={completedCount}
-              activeCount={todosCount - completedCount}
-              onClearCompleted={clearCompleted}
-              filter={filter}
-            />
-          )} */}
+          <TodoList />
+          {!!todosCount && <Footer />}
         </div>
       </div>
     </section>
   );
 };
 
-export default MainSection;
+export default TodosSection;
