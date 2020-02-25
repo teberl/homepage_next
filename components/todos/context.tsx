@@ -1,4 +1,5 @@
-import React, { useReducer } from "react";
+import * as React from "react";
+import { useReducer } from "react";
 import { Actions } from "./enums";
 import { ITodo } from "./interfaces";
 

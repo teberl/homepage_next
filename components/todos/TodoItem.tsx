@@ -1,6 +1,6 @@
+import * as React from "react";
 import classnames from "classnames";
-import React, { useState, useContext } from "react";
-
+import { useState, useContext } from "react";
 import { ITodo } from "./interfaces";
 import { TodosCtx } from "./context";
 import TodoTextInput from "./TodoTextInput";

@@ -1,5 +1,5 @@
-import React, { useContext } from "react";
-
+import * as React from "react";
+import { useContext } from "react";
 import { TodoFilters } from "./enums";
 import { TodosCtx } from "./context";
 import TodoList from "./TodoList";
