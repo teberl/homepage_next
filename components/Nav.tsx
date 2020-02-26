@@ -7,6 +7,7 @@ const Nav: React.FunctionComponent = () => {
 
   const links = [
     { href: "/", label: "Home" },
+    { href: "todos", label: "Todo • MVC" },
     { href: "about", label: "About" }
   ];
 

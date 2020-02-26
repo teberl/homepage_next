@@ -4,9 +4,13 @@ module.exports = {
     "autoprefixer",
     [
       "@fullhuman/postcss-purgecss",
-      process.env.NODE_ENV === "production"
+      process.env.PURGE == "TRUE"
         ? {
-            content: ["./pages/**/*.tsx", "./components/**/*.tsx"],
+            content: [
+              "./pages/**/*.tsx",
+              "./components/**/*.tsx",
+              "./todos/**/*.tsx",
+            ],
             defaultExtractor: content => content.match(/[\w-/:]+(?<!:)/g) || [],
           }
         : false,
