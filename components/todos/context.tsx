@@ -23,7 +23,7 @@ const TodosCtx = React.createContext({
 
 const TodosCtxProvider: React.FunctionComponent = ({ children }) => {
   const [todos, dispatch]: [Array<ITodo>, Function] = useReducer(reducer, [
-    { id: 0, text: "First things first.", isCompleted: false }
+    { id: 0, text: "Buy me a 🦄.", isCompleted: false }
   ]);
 
   const initialContext: ITodosContext = {
