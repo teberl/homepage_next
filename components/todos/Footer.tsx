@@ -1,6 +1,6 @@
-import * as React from "react";
-import { useContext } from "react";
+import classnames from "classnames";
 import { useRouter } from "next/router";
+import React, { useContext } from "react";
 import { TodosCtx } from "./context";
 import { TodoFilters } from "./enums";
 import FilterLink from "./FilterLink";
@@ -28,13 +28,14 @@ const Footer: React.FunctionComponent = () => {
     filter === (query.filter || TodoFilters.SHOW_ALL);
 
   const activeCount = todos.filter(todo => !todo.isCompleted).length;
-  return (
-    <footer className="footer">
-      <span className="todo-count">
+
+  return todos.length === 0 ? null : (
+    <footer className="flex justify-between px-10 mb-5">
+      <span className="flex-none text-left w-1/3">
         <strong>{activeCount || "No"}</strong>{" "}
         {`item${activeCount === 1 ? "" : "s"}`} left
       </span>
-      <ul className="flex justify-center">
+      <ul className="flex flex-none justify-center w-1/3">
         {filtersWithTitle.map(({ title, filter }) => (
           <li key={filter} className="mx-2">
             <FilterLink active={isActive(filter)} filter={filter}>
@@ -43,11 +44,16 @@ const Footer: React.FunctionComponent = () => {
           </li>
         ))}
       </ul>
-      {activeCount !== todos.length && (
-        <button className="clear-completed" onClick={() => {}}>
+      {
+        <button
+          className={classnames("flex-none text-right w-1/3", {
+            invisible: activeCount === todos.length
+          })}
+          onClick={() => {}}
+        >
           Clear completed
         </button>
-      )}
+      }
     </footer>
   );
 };

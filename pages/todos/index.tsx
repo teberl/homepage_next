@@ -1,13 +1,11 @@
 import { NextPage } from "next";
 import Layout from "../../components/Layout";
-import TodosSection from "../../components/todos/TodosSection";
-import { TodosCtxProvider } from "../../components/todos/context";
+import TodosMain from "../../components/todos/TodosMain";
+import {} from "../../components/todos/context";
 
 const About: NextPage = () => (
   <Layout>
-    <TodosCtxProvider>
-      <TodosSection />
-    </TodosCtxProvider>
+    <TodosMain />
   </Layout>
 );
 

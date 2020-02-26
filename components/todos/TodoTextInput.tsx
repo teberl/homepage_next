@@ -7,15 +7,20 @@ const ENTER_KEY_CODE = 13;
 
 interface IProps {
   todo?: ITodo;
-  done(): void;
+  done?(): void;
 }
 
-const TodoTextInput: React.FunctionComponent<IProps> = ({ todo, done }) => {
+const TodoTextInput: React.FunctionComponent<IProps> = ({
+  todo,
+  done: callback
+}) => {
   const [localText, setLocalText] = useState((todo && todo.text) || "");
 
   const { addTodo, updateTodo } = useContext(TodosCtx);
 
   const placeholder = !todo ? "What needs to be done?" : undefined;
+
+  const done = callback || (() => {});
 
   const handleSubmit = (event: React.KeyboardEvent<HTMLInputElement>) => {
     const text = event.currentTarget.value;
