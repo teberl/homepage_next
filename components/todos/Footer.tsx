@@ -30,12 +30,12 @@ const Footer: React.FunctionComponent = () => {
   const activeCount = todos.filter(todo => !todo.isCompleted).length;
 
   return todos.length === 0 ? null : (
-    <footer className="flex justify-between px-10 mb-5">
-      <span className="flex-none text-left w-1/3">
+    <footer className="flex flex-col lg:px-10 my-5 lg:flex-row lg:justify-between">
+      <span className="lg:flex-none lg:text-left lg:w-1/3 m-auto">
         <strong>{activeCount || "No"}</strong>{" "}
         {`item${activeCount === 1 ? "" : "s"}`} left
       </span>
-      <ul className="flex flex-none justify-center w-1/3">
+      <ul className="flex flex-row lg:flex-none lg:justify-center lg:w-1/3 mx-auto my-2">
         {filtersWithTitle.map(({ title, filter }) => (
           <li key={filter} className="mx-2">
             <FilterLink active={isActive(filter)} filter={filter}>
@@ -46,7 +46,7 @@ const Footer: React.FunctionComponent = () => {
       </ul>
       {
         <button
-          className={classnames("flex-none text-right w-1/3", {
+          className={classnames("lg:flex-none lg:text-right lg:w-1/3 m-auto", {
             invisible: activeCount === todos.length
           })}
           onClick={() => {}}

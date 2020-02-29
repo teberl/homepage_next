@@ -11,7 +11,7 @@ const TodoList: React.FunctionComponent = () => {
   const { todos } = useContext(TodosCtx);
   const filter = (query.filter || TodoFilters.SHOW_ALL) as TodoFilters;
   return (
-    <ul id="todoList" className="my-5">
+    <ul id="todoList" className="my-3 lg:my-5">
       {getFilteredTodos(todos, filter).map(todo => (
         <TodoItem key={todo.id} todo={todo} />
       ))}
