@@ -19,21 +19,21 @@
   "license": "ISC",
   "dependencies": {
     "classnames": "^2.2.6",
-    "next": "^9.2.2",
+    "next": "^9.3.0",
     "react": "^16.13.0",
     "react-dom": "^16.13.0"
   },
   "devDependencies": {
     "@fullhuman/postcss-purgecss": "^2.1.0",
-    "@types/classnames": "^2.2.9",
-    "@types/node": "^13.7.6",
+    "@types/classnames": "^2.2.10",
+    "@types/node": "^13.9.1",
     "@types/react": "^16.9.23",
     "@types/react-dom": "^16.9.5",
     "husky": "^4.2.3",
     "lint-staged": "^10.0.8",
     "prettier": "^1.19.1",
     "tailwindcss": "^1.2.0",
-    "typescript": "^3.8.2"
+    "typescript": "^3.8.3"
   },
   "husky": {
     "hooks": {
