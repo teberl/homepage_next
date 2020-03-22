@@ -1,18 +1,22 @@
-import * as React from "react";
-import Nav from "./Nav";
+import React from "react";
 import Head from "next/head";
+import classnames from "classnames";
+
+import Nav from "./Nav";
 
 type Props = {
   title?: string;
+  fitScreen?: boolean;
 };
 
 const layoutStyle: React.CSSProperties = {};
 
 const Layout: React.FunctionComponent<Props> = ({
   children,
-  title = "teberl"
+  title = "teberl",
+  fitScreen = false,
 }) => (
-  <div style={layoutStyle}>
+  <div className={classnames({ "h-screen": fitScreen })}>
     <Head>
       <title>{title}</title>
       <meta charSet="utf-8" />
@@ -27,7 +31,7 @@ const Layout: React.FunctionComponent<Props> = ({
       <Nav />
     </header>
     {children}
-    <footer className="mb-2 text-center text-xs text-gray-800 cursor-default">
+    <footer className="z-0 fixed inset-x-0 bottom-0 my-2 text-center text-xs text-gray-800 cursor-default">
       <strong>v1</strong> Munich 2020
     </footer>
   </div>

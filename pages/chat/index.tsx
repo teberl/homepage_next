@@ -22,7 +22,7 @@ const Chat: NextPage = () => {
   };
 
   return (
-    <Layout>
+    <Layout fitScreen>
       {user ? <ChatMain user={user} /> : <Login onSubmit={handleSetUser} />}
     </Layout>
   );

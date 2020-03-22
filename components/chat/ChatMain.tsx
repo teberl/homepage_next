@@ -12,8 +12,8 @@ interface IProps {
 const ChatMain: React.FunctionComponent<IProps> = ({ user }) => {
   const socket = useMemo(() => io(), []);
 
-  const [chatItems, setChatItems] = useState<IChatItem[]>([]);
   const [localText, setLocalText] = useState<string>("");
+  const [chatItems, setChatItems] = useState<IChatItem[]>([]);
 
   useEffect(() => {
     socket.emit(emitAddUser, user.name);
@@ -48,7 +48,7 @@ const ChatMain: React.FunctionComponent<IProps> = ({ user }) => {
     if (localText.length > 0) {
       const newMessage = {
         type: "msg",
-        text: localText,
+        text: localText.trim(),
         username: user.name,
       };
       setChatItems([...chatItems, newMessage]);
@@ -58,24 +58,26 @@ const ChatMain: React.FunctionComponent<IProps> = ({ user }) => {
   };
 
   return (
-    <div className="w-full">
-      <ul id="messages" className="border-solid border-2 border-gray-600">
-        {chatItems.map(({ type, text, username }, index) => (
-          <li
-            key={`msg-${index}`}
-            className={classnames({ "text-right": type === "user" })}
-          >
-            {`${username && type === "msg" ? username + ": " : ""}${text}`}
-          </li>
-        ))}
-      </ul>
-      <form className="flex mt-4 mx-2" onSubmit={handleSubmit}>
+    <div className="z-10 bg-white w-full relative flex flex-col">
+      <div className="h-screen-7/10 flex-initial flex flex-col flex-col-reverse mx-2 overflow-auto scrollbar-w-2 scrollbar-track-gray-lighter scrollbar-thumb-rounded scrollbar-thumb-gray">
+        <ul>
+          {chatItems.map(({ type, text, username }, index) => (
+            <li
+              key={`msg-${index}`}
+              className={classnames({ "text-right": type === "user" })}
+            >
+              {`${username && type === "msg" ? username + ": " : ""}${text}`}
+            </li>
+          ))}
+        </ul>
+      </div>
+      <form className="flex-initial flex mx-2 my-4" onSubmit={handleSubmit}>
         <input
           id="m"
           autoFocus
           type="text"
           onChange={(event: React.ChangeEvent<HTMLInputElement>) =>
-            setLocalText(event.target.value.trim())
+            setLocalText(event.target.value)
           }
           value={localText}
           className="flex-1 bg-white focus:outline-none focus:shadow-outline border border-gray-300 rounded-lg py-2 px-4 block w-full appearance-none leading-normal"
