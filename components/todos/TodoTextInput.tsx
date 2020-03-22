@@ -12,7 +12,7 @@ interface IProps {
 
 const TodoTextInput: React.FunctionComponent<IProps> = ({
   todo,
-  done: callback
+  done: callback,
 }) => {
   const [localText, setLocalText] = useState((todo && todo.text) || "");
 
@@ -53,7 +53,7 @@ const TodoTextInput: React.FunctionComponent<IProps> = ({
       className="flex-1 text-m mx-2 text-center text-gray-700 font-bold"
       type="text"
       placeholder={placeholder}
-      autoFocus={true}
+      autoFocus
       value={localText}
       onBlur={handleBlur}
       onChange={handleChange}

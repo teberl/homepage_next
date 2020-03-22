@@ -11,7 +11,7 @@ interface IProps {
 const FilterLink: React.FunctionComponent<IProps> = ({
   active,
   children,
-  filter
+  filter,
 }) => {
   const href = { pathname: "/todos" };
   if (filter !== TodoFilters.SHOW_ALL) {
