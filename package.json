@@ -8,20 +8,28 @@
   },
   "main": "index.js",
   "scripts": {
-    "dev": "next",
+    "dev": "node server.js",
     "build": "next build",
-    "start": "next start"
+    "start": "NODE_ENV=production node server.js"
   },
   "keywords": [
-    "homepage"
+    "homepage",
+    "react",
+    "next.js",
+    "socket.io",
+    "typescript",
+    "todo-mvc"
   ],
   "author": "teberl",
   "license": "ISC",
   "dependencies": {
     "classnames": "^2.2.6",
+    "express": "^4.17.1",
     "next": "^9.3.1",
     "react": "^16.13.1",
-    "react-dom": "^16.13.1"
+    "react-dom": "^16.13.1",
+    "socket.io": "^2.3.0",
+    "socket.io-client": "^2.3.0"
   },
   "devDependencies": {
     "@fullhuman/postcss-purgecss": "^2.1.0",
@@ -29,11 +37,16 @@
     "@types/node": "^13.9.2",
     "@types/react": "^16.9.25",
     "@types/react-dom": "^16.9.5",
+    "@types/socket.io-client": "^1.4.32",
     "husky": "^4.2.3",
     "lint-staged": "^10.0.8",
-    "prettier": "^1.19.1",
+    "prettier": "^2.0.1",
     "tailwindcss": "^1.2.0",
     "typescript": "^3.8.3"
+  },
+  "prettier": {
+    "trailingComma": "es5",
+    "printWidth": 80
   },
   "husky": {
     "hooks": {
@@ -41,6 +54,6 @@
     }
   },
   "lint-staged": {
-    "*.{ts,tsx,md,html,css}": "prettier --write"
+    "*.{js, ts,tsx,md,html,css}": "prettier --write"
   }
 }
