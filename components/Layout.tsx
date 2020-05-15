@@ -10,7 +10,7 @@ const layoutStyle: React.CSSProperties = {};
 
 const Layout: React.FunctionComponent<Props> = ({
   children,
-  title = "teberl"
+  title = "teberl",
 }) => (
   <div style={layoutStyle}>
     <Head>

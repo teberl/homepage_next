@@ -12,7 +12,7 @@ interface IProps {
 
 const TodoTextInput: React.FunctionComponent<IProps> = ({
   todo,
-  done: callback
+  done: callback,
 }) => {
   const [localText, setLocalText] = useState((todo && todo.text) || "");
 

@@ -12,7 +12,7 @@ const TodoList: React.FunctionComponent = () => {
   const filter = (query.filter || TodoFilters.SHOW_ALL) as TodoFilters;
   return (
     <ul id="todoList" className="my-3 lg:my-5">
-      {getFilteredTodos(todos, filter).map(todo => (
+      {getFilteredTodos(todos, filter).map((todo) => (
         <TodoItem key={todo.id} todo={todo} />
       ))}
     </ul>
@@ -22,9 +22,9 @@ const TodoList: React.FunctionComponent = () => {
 function getFilteredTodos(todos: Array<ITodo>, filter: TodoFilters) {
   switch (filter) {
     case TodoFilters.SHOW_COMPLETED:
-      return todos.filter(t => t.isCompleted);
+      return todos.filter((t) => t.isCompleted);
     case TodoFilters.SHOW_ACTIVE:
-      return todos.filter(t => !t.isCompleted);
+      return todos.filter((t) => !t.isCompleted);
     case TodoFilters.SHOW_ALL:
       return todos;
     default:

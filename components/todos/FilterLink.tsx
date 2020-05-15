@@ -11,7 +11,7 @@ interface IProps {
 const FilterLink: React.FunctionComponent<IProps> = ({
   active,
   children,
-  filter
+  filter,
 }) => {
   const href = { pathname: "/todos" };
   if (filter !== TodoFilters.SHOW_ALL) {
@@ -19,12 +19,11 @@ const FilterLink: React.FunctionComponent<IProps> = ({
   }
   return (
     <Link href={href}>
-      <a
-        className={classnames({ "text-blue-700": active })}
-        style={{ cursor: "pointer" }}
+      <span
+        className={classnames("cursor-pointer", { "text-blue-700": active })}
       >
         {children}
-      </a>
+      </span>
     </Link>
   );
 };

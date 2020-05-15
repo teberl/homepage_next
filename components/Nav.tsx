@@ -8,7 +8,7 @@ const Nav: React.FunctionComponent = () => {
   const links = [
     { href: "/", label: "Home" },
     { href: "todos", label: "Todo • MVC" },
-    { href: "about", label: "About" }
+    { href: "about", label: "About" },
   ];
 
   return (
@@ -43,9 +43,9 @@ const Nav: React.FunctionComponent = () => {
         <div className="text-sm lg:flex-grow">
           {links.map(({ href, label }) => (
             <Link key={`${href}${label}`} href={href}>
-              <a className="block mt-4 lg:inline-block lg:mt-0 text-gray-800 hover:text-blue-700 mr-4">
+              <span className="cursor-pointer block mt-4 lg:inline-block lg:mt-0 text-gray-800 hover:text-blue-700 mr-4">
                 {label}
-              </a>
+              </span>
             </Link>
           ))}
         </div>

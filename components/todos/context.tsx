@@ -18,22 +18,22 @@ const TodosCtx = React.createContext({
   deleteTodo: () => [],
   toggleTodo: () => [],
   updateTodo: () => [],
-  completeAll: () => []
+  completeAll: () => [],
 } as ITodosContext);
 
 const TodosCtxProvider: React.FunctionComponent = ({ children }) => {
   const [todos, dispatch]: [Array<ITodo>, Function] = useReducer(reducer, [
-    { id: 0, text: "Buy me a 🦄.", isCompleted: false }
+    { id: 0, text: "Buy me a 🦄.", isCompleted: false },
   ]);
 
   const initialContext: ITodosContext = {
     todos,
-    addTodo: text => dispatch({ type: Actions.ADD, payload: { text } }),
-    deleteTodo: id => dispatch({ type: Actions.DELETE, payload: { id } }),
+    addTodo: (text) => dispatch({ type: Actions.ADD, payload: { text } }),
+    deleteTodo: (id) => dispatch({ type: Actions.DELETE, payload: { id } }),
     updateTodo: (id, text) =>
       dispatch({ type: Actions.UPDATE, payload: { id, text } }),
-    toggleTodo: id => dispatch({ type: Actions.TOGGLE, payload: { id } }),
-    completeAll: () => dispatch({ type: Actions.COMPLETE_ALL, payload: {} })
+    toggleTodo: (id) => dispatch({ type: Actions.TOGGLE, payload: { id } }),
+    completeAll: () => dispatch({ type: Actions.COMPLETE_ALL, payload: {} }),
   };
 
   return (
@@ -54,22 +54,22 @@ function reducer(todos: Array<ITodo>, action: IAction): Array<ITodo> {
       return [
         ...todos,
         {
-          id: Math.max(...todos.map(todo => todo.id), 0) + 1,
+          id: Math.max(...todos.map((todo) => todo.id), 0) + 1,
           text: text,
-          isCompleted: false
-        }
+          isCompleted: false,
+        },
       ];
     case Actions.DELETE:
-      return todos.filter(todo => todo.id !== id);
+      return todos.filter((todo) => todo.id !== id);
     case Actions.TOGGLE:
-      return todos.map(todo =>
+      return todos.map((todo) =>
         todo.id === id ? { ...todo, isCompleted: !todo.isCompleted } : todo
       );
     case Actions.UPDATE:
-      return todos.map(todo => (todo.id === id ? { ...todo, text } : todo));
+      return todos.map((todo) => (todo.id === id ? { ...todo, text } : todo));
     case Actions.COMPLETE_ALL:
-      const areAllCompleted = todos.every(todo => todo.isCompleted);
-      return todos.map(todo => ({ ...todo, isCompleted: !areAllCompleted }));
+      const areAllCompleted = todos.every((todo) => todo.isCompleted);
+      return todos.map((todo) => ({ ...todo, isCompleted: !areAllCompleted }));
     default:
       return todos;
   }

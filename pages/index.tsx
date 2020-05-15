@@ -1,3 +1,4 @@
+import * as React from "react";
 import { NextPage } from "next";
 import Layout from "../components/Layout";
 
@@ -18,7 +19,7 @@ const Home: NextPage = () => (
               <img
                 className="block lg:hidden rounded-full shadow-xl mx-auto -mt-16 h-48 w-48 bg-cover bg-center"
                 src="/horse.jpg"
-                alt="profile picture"
+                alt="desktop profile"
               />
             </picture>
 
@@ -61,7 +62,6 @@ const Home: NextPage = () => (
               <a className="link" href="https://twitter.com/_teberl">
                 <svg
                   className="h-6 fill-current text-gray-600 hover:text-blue-700"
-                  role="img"
                   viewBox="0 0 24 24"
                   xmlns="http://www.w3.org/2000/svg"
                 >
@@ -118,7 +118,7 @@ const Home: NextPage = () => (
             <img
               className="rounded-none lg:rounded-lg shadow-2xl hidden lg:block"
               src="/horse.jpg"
-              alt="profile picture"
+              alt="mobile profile"
             />
           </picture>
         </div>

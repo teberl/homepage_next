@@ -27,16 +27,21 @@ const TodoItem: React.FunctionComponent<IProps> = ({ todo }) => {
         />
         <span
           className={classnames("flex-1 text-m mx-2 text-gray-700 font-bold", {
-            "line-through text-gray-500": todo.isCompleted
+            "line-through text-gray-500": todo.isCompleted,
           })}
           onDoubleClick={() => setEditing(true)}
         >
           {todo.text}
         </span>
 
-        <button className="flex-none" onClick={() => deleteTodo(todo.id)}>
+        <span
+          role="img"
+          aria-label="Delete todo"
+          className="flex-none"
+          onClick={() => deleteTodo(todo.id)}
+        >
           ❌
-        </button>
+        </span>
       </>
     );
   }

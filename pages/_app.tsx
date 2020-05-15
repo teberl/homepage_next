@@ -1,3 +1,4 @@
+import * as React from "react";
 import "../css/main.css";
 import { AppProps } from "next/app";
 

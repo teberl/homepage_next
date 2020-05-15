@@ -8,16 +8,16 @@ import FilterLink from "./FilterLink";
 const filtersWithTitle = [
   {
     title: "All",
-    filter: TodoFilters.SHOW_ALL
+    filter: TodoFilters.SHOW_ALL,
   },
   {
     title: "Active",
-    filter: TodoFilters.SHOW_ACTIVE
+    filter: TodoFilters.SHOW_ACTIVE,
   },
   {
     title: "Completed",
-    filter: TodoFilters.SHOW_COMPLETED
-  }
+    filter: TodoFilters.SHOW_COMPLETED,
+  },
 ];
 
 const Footer: React.FunctionComponent = () => {
@@ -27,7 +27,7 @@ const Footer: React.FunctionComponent = () => {
   const isActive = (filter: TodoFilters) =>
     filter === (query.filter || TodoFilters.SHOW_ALL);
 
-  const activeCount = todos.filter(todo => !todo.isCompleted).length;
+  const activeCount = todos.filter((todo) => !todo.isCompleted).length;
 
   return todos.length === 0 ? null : (
     <footer className="flex flex-col lg:px-10 my-5 lg:flex-row lg:justify-between">
@@ -47,7 +47,7 @@ const Footer: React.FunctionComponent = () => {
       {
         <button
           className={classnames("lg:flex-none lg:text-right lg:w-1/3 m-auto", {
-            invisible: activeCount === todos.length
+            invisible: activeCount === todos.length,
           })}
           onClick={() => {}}
         >

@@ -1,5 +1,5 @@
 {
-  "extends": ["react-app", "plugin:jest/recommended"],
+  "extends": ["react-app", "plugin:jest/recommended", "plugin:prettier/recommended"],
   "globals": {
     "Atomics": "readonly",
     "SharedArrayBuffer": "readonly"
@@ -12,5 +12,8 @@
     "ecmaVersion": 2018,
     "sourceType": "module"
   },
-  "rules": {}
+  "plugins": ["prettier"],
+  "rules": {
+    "prettier/prettier": "error"
+  }
 }
