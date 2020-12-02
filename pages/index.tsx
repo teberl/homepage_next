@@ -1,11 +1,12 @@
 import * as React from "react";
 import { NextPage } from "next";
 import Layout from "../components/Layout";
+import FlippingMe from "../components/FlippingMe";
 
 const Home: NextPage = () => (
   <Layout>
     <div role="main" className="w-full text-center">
-      <div className="max-w-4xl flex items-center h-auto lg:h-screen flex-wrap mx-auto my-16 lg:my-0">
+      <div className="max-w-4xl flex items-center h-auto h-screen flex-wrap mx-auto my-16 lg:my-0">
         {/* Main Col */}
         <div
           id="profile"
@@ -13,19 +14,11 @@ const Home: NextPage = () => (
         >
           <div className="p-4 md:p-12 text-center lg:text-left">
             {/* Image for mobile view */}
-            <picture className="block lg:hidden rounded-full shadow-xl mx-auto -mt-16 h-48 w-48 bg-cover bg-center">
-              <source type="image/webp" srcSet="/horse.webp" />
-              <source type="image/jpeg" srcSet="/horse.jpg" />
-              <img
-                className="block lg:hidden rounded-full shadow-xl mx-auto -mt-16 h-48 w-48 bg-cover bg-center"
-                src="/horse.jpg"
-                alt="desktop profile"
-              />
-            </picture>
+            <FlippingMe />
 
             <h1 className="text-3xl font-bold pt-8 lg:pt-0">Thomas Eberl</h1>
             <div className="mx-auto lg:mx-0 w-4/5 pt-3 border-b-2 border-blue-500 opacity-25"></div>
-            <p className="pt-4 text-base font-bold flex items-center justify-center lg:justify-start">
+            <p className="pt-4 text-sm lg:text-base font-bold flex items-center justify-center lg:justify-start">
               <svg
                 className="h-4 fill-current text-blue-700 pr-4"
                 xmlns="http://www.w3.org/2000/svg"
@@ -33,7 +26,7 @@ const Home: NextPage = () => (
               >
                 <path d="M9 12H1v6a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-6h-8v2H9v-2zm0-1H0V5c0-1.1.9-2 2-2h4V2a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v1h4a2 2 0 0 1 2 2v6h-9V9H9v2zm3-8V2H8v1h4z" />
               </svg>
-              Software Engineer at Check24
+              Senior Software Engineer at Check24
             </p>
             <p className="pt-2 text-gray-800 text-xs lg:text-sm flex items-center justify-center lg:justify-start">
               <svg
@@ -46,18 +39,12 @@ const Home: NextPage = () => (
               Munich - Germany
             </p>
             <p className="pt-8 text-sm">
-              Passionate climber and biker, who loves to cook and eat.
+              Ambitious rock climber and bike supporter,
+              <br />
+              who loves tavelling, cooking and eating.
             </p>
-            <div className="pt-12 pb-8">
-              <button
-                className="bg-blue-700 hover:bg-blue-800 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
-                type="button"
-              >
-                Get In Touch
-              </button>
-            </div>
 
-            <div className="mt-6 pb-16 lg:pb-0 w-4/5 lg:w-full mx-auto flex flex-wrap items-center justify-between">
+            <div className="mt-6 w-4/5 lg:w-full mx-auto flex flex-wrap items-center justify-between">
               {/* Use https://simpleicons.org/ to find the svg for your preferred product */}
               <a className="link" href="https://twitter.com/_teberl">
                 <svg

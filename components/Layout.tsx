@@ -6,7 +6,9 @@ type Props = {
   title?: string;
 };
 
-const layoutStyle: React.CSSProperties = {};
+const layoutStyle: React.CSSProperties = {
+  boxShadow: "inset 0 0 3rem rgba(0, 0, 0, .3)",
+};
 
 const Layout: React.FunctionComponent<Props> = ({
   children,
@@ -27,7 +29,7 @@ const Layout: React.FunctionComponent<Props> = ({
       <Nav />
     </header>
     {children}
-    <footer className="mb-2 text-center text-xs text-gray-800 cursor-default">
+    <footer className="pb-4 text-center text-xs text-gray-800 cursor-default">
       <strong>v1</strong> Munich 2020
     </footer>
   </div>

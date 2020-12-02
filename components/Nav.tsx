@@ -12,7 +12,7 @@ const Nav: React.FunctionComponent = () => {
   ];
 
   return (
-    <nav className="flex items-center justify-between flex-wrap border-solid border-b border-gray-600 p-6">
+    <nav className="flex items-center justify-between flex-wrap border-solid border-b border-gray-600 lg:mx-16 p-6">
       <div className="flex items-center flex-shrink-0 text-gray-800 mr-6">
         <a className="font-semibold text-xl tracking-tight" href="/">
           teberl
