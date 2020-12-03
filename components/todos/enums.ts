@@ -8,6 +8,7 @@ export enum Actions {
   ADD,
   TOGGLE,
   DELETE,
+  DELETE_COMPLETED,
   UPDATE,
   COMPLETE_ALL,
 }

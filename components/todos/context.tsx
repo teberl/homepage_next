@@ -4,18 +4,20 @@ import { Actions } from "./enums";
 import { ITodo } from "./interfaces";
 
 interface ITodosContext {
-  todos: Array<ITodo>;
-  addTodo(text: string): Array<ITodo>;
-  deleteTodo(id: number): Array<ITodo>;
-  toggleTodo(id: number): Array<ITodo>;
-  updateTodo(id: number, text: string): Array<ITodo>;
-  completeAll(): Array<ITodo>;
+  todos: ITodo[];
+  addTodo(text: string): ITodo[];
+  deleteTodo(id: number): ITodo[];
+  deleteCompleted(): ITodo[];
+  toggleTodo(id: number): ITodo[];
+  updateTodo(id: number, text: string): ITodo[];
+  completeAll(): ITodo[];
 }
 
 const TodosCtx = React.createContext({
   todos: [],
   addTodo: () => [],
   deleteTodo: () => [],
+  deleteCompleted: () => [],
   toggleTodo: () => [],
   updateTodo: () => [],
   completeAll: () => [],
@@ -30,6 +32,8 @@ const TodosCtxProvider: React.FunctionComponent = ({ children }) => {
     todos,
     addTodo: (text) => dispatch({ type: Actions.ADD, payload: { text } }),
     deleteTodo: (id) => dispatch({ type: Actions.DELETE, payload: { id } }),
+    deleteCompleted: () =>
+      dispatch({ type: Actions.DELETE_COMPLETED, payload: {} }),
     updateTodo: (id, text) =>
       dispatch({ type: Actions.UPDATE, payload: { id, text } }),
     toggleTodo: (id) => dispatch({ type: Actions.TOGGLE, payload: { id } }),
@@ -61,6 +65,8 @@ function reducer(todos: Array<ITodo>, action: IAction): Array<ITodo> {
       ];
     case Actions.DELETE:
       return todos.filter((todo) => todo.id !== id);
+    case Actions.DELETE_COMPLETED:
+      return todos.filter((todo) => !todo.isCompleted);
     case Actions.TOGGLE:
       return todos.map((todo) =>
         todo.id === id ? { ...todo, isCompleted: !todo.isCompleted } : todo

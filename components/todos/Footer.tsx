@@ -22,7 +22,7 @@ const filtersWithTitle = [
 
 const Footer: React.FunctionComponent = () => {
   const { query } = useRouter();
-  const { todos } = useContext(TodosCtx);
+  const { todos, deleteCompleted } = useContext(TodosCtx);
 
   const isActive = (filter: TodoFilters) =>
     filter === (query.filter || TodoFilters.SHOW_ALL);
@@ -49,7 +49,7 @@ const Footer: React.FunctionComponent = () => {
           className={classnames("lg:flex-none lg:text-right lg:w-1/3 m-auto", {
             invisible: activeCount === todos.length,
           })}
-          onClick={() => {}}
+          onClick={deleteCompleted}
         >
           Clear completed
         </button>
