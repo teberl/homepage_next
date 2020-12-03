@@ -2,5 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
+body {
+  margin: 0;
+}
+
 /* purgecss start ignore */
 /* purgecss end ignore */

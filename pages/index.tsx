@@ -39,9 +39,9 @@ const Home: NextPage = () => (
               Munich - Germany
             </p>
             <p className="pt-8 text-sm">
-              Ambitious rock climber and bike supporter,
+              Hobby rock climber and big bike supporter,
               <br />
-              who loves tavelling, cooking and eating.
+              who loves travelling, cooking and eating.
             </p>
 
             <div className="mt-6 w-4/5 lg:w-full mx-auto flex flex-wrap items-center justify-between">
