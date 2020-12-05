@@ -5,11 +5,7 @@ import Link from "next/link";
 const Nav: React.FunctionComponent = () => {
   const [isHidden, setIsHidden] = useState(true);
 
-  const links = [
-    { href: "/", label: "Home" },
-    { href: "todos", label: "Todo • MVC" },
-    { href: "about", label: "About" },
-  ];
+  const links = [{ href: "todos", label: "Todo • MVC" }];
 
   return (
     <nav className="flex items-center justify-between flex-wrap border-solid border-b border-gray-600 lg:mx-16 p-6">

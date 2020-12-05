@@ -1,7 +1,7 @@
 import * as React from "react";
 import { NextPage } from "next";
 import Layout from "../components/Layout";
-import FlippingMe from "../components/FlippingMe";
+import FlippingCoin, { Side } from "../components/FlippingCoin/FlippingCoin";
 
 const Home: NextPage = () => (
   <Layout>
@@ -13,8 +13,7 @@ const Home: NextPage = () => (
           className="w-full lg:w-3/5 rounded-lg lg:rounded-l-lg lg:rounded-r-none shadow-2xl bg-white opacity-75 mx-6 lg:mx-0"
         >
           <div className="p-4 md:p-12 text-center lg:text-left">
-            {/* Image for mobile view */}
-            <FlippingMe />
+            <MobileImage />
 
             <h1 className="text-3xl font-bold pt-8 lg:pt-0">Thomas Eberl</h1>
             <div className="mx-auto lg:mx-0 w-4/5 pt-3 border-b-2 border-blue-500 opacity-25"></div>
@@ -39,16 +38,23 @@ const Home: NextPage = () => (
               Munich - Germany
             </p>
             <p className="pt-8 text-sm">
-              Hobby rock climber and big bike supporter,
-              <br />
-              who loves travelling, cooking and eating.
+              <h6 className="pb-2">I'm professional about building things</h6>
+              <p>
+                <b>with</b> .NET, Node.js, React, Next.js
+              </p>
+              <p>
+                <b>in</b> C#, TypeScript/JS, Elixir
+              </p>
+              <p>
+                <b>for</b> (mainly) the web
+              </p>
             </p>
 
-            <div className="mt-6 w-4/5 lg:w-full mx-auto flex flex-wrap items-center justify-between">
+            <div className="pt-8 w-4/5 lg:w-full mx-auto flex flex-wrap items-center justify-between">
               {/* Use https://simpleicons.org/ to find the svg for your preferred product */}
               <a className="link" href="https://twitter.com/_teberl">
                 <svg
-                  className="h-6 fill-current text-gray-600 hover:text-blue-700"
+                  className="h-6 fill-current text-gray-600 hover:text-blue-400"
                   viewBox="0 0 24 24"
                   xmlns="http://www.w3.org/2000/svg"
                 >
@@ -83,7 +89,7 @@ const Home: NextPage = () => (
                 href="https://stackoverflow.com/users/6817880/teberl"
               >
                 <svg
-                  className="h-6 fill-current text-gray-600 hover:text-orange-700"
+                  className="h-6 fill-current text-gray-600 hover:text-yellow-600"
                   role="img"
                   viewBox="0 0 24 24"
                   xmlns="http://www.w3.org/2000/svg"
@@ -96,22 +102,68 @@ const Home: NextPage = () => (
           </div>
         </div>
 
-        {/* Img Col */}
-        <div className="w-full lg:w-2/5">
-          {/* Big profile image for side bar (desktop */}
-          <picture className="rounded-none lg:rounded-lg shadow-2xl hidden lg:block">
-            <source type="image/webp" srcSet="/horse.webp" />
-            <source type="image/jpeg" srcSet="/horse.jpg" />
-            <img
-              className="rounded-none lg:rounded-lg shadow-2xl hidden lg:block"
-              src="/horse.jpg"
-              alt="mobile profile"
-            />
-          </picture>
-        </div>
+        <DesktopImage />
       </div>
     </div>
   </Layout>
+);
+
+const DesktopImage = () => (
+  <div className="w-full lg:w-2/6">
+    <FlippingCoin height={425}>
+      <Side type="front">
+        <picture className="rounded-none lg:rounded-lg shadow-2xl hidden lg:block">
+          <source type="image/webp" srcSet="/horse.webp" />
+          <source type="image/jpeg" srcSet="/horse.jpg" />
+          <img
+            className="rounded-none lg:rounded-lg shadow-2xl hidden lg:block"
+            src="/horse.jpg"
+            alt="horse"
+          />
+        </picture>
+      </Side>
+      <Side type="back">
+        <picture className="rounded-none lg:rounded-lg shadow-2xl hidden lg:block">
+          <source type="image/webp" srcSet="/me.webp" />
+          <source type="image/jpeg" srcSet="/me.jpg" />
+          <img
+            className="rounded-none lg:rounded-lg shadow-2xl hidden lg:block"
+            src="/me.jpg"
+            alt="me"
+          />
+        </picture>
+      </Side>
+    </FlippingCoin>
+  </div>
+);
+
+const MobileImage = () => (
+  <div className="lg:hidden">
+    <FlippingCoin height={125}>
+      <Side type="front">
+        <picture className="block rounded-full shadow-xl mx-auto -mt-16 h-48 w-36 bg-cover bg-center">
+          <source type="image/webp" srcSet="/horse.webp" />
+          <source type="image/jpeg" srcSet="/horse.jpg" />
+          <img
+            className="block rounded-full shadow-xl mx-auto -mt-16 h-48 w-36 bg-cover bg-center"
+            src="/horse.jpg"
+            alt="horse"
+          />
+        </picture>
+      </Side>
+      <Side type="back">
+        <picture className="block lg:hidden rounded-full shadow-xl mx-auto -mt-16 h-48 w-32 bg-cover bg-center">
+          <source type="image/webp" srcSet="/me.webp" />
+          <source type="image/jpeg" srcSet="/me.jpg" />
+          <img
+            className="block lg:hidden rounded-full shadow-xl mx-auto -mt-16 h-48 w-32 bg-cover bg-center"
+            src="/me.jpg"
+            alt="me"
+          />
+        </picture>
+      </Side>
+    </FlippingCoin>
+  </div>
 );
 
 export default Home;

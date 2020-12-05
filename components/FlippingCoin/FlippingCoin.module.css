@@ -1,3 +1,9 @@
+/* 
+Credits for the flipping coin animation go to @DavidWalsh
+https://davidwalsh.name/css-flip
+Thx for that 🙏
+*/
+
 /* entire container, keeps perspective */
 .container {
   perspective: 1000px;
@@ -13,7 +19,7 @@
 .front,
 .back {
   width: 100%;
-  height: 125px;
+  /* height: 125px; */
 }
 
 /* flip speed goes here */
